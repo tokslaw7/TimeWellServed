@@ -1,0 +1,25 @@
+version: '3'
+services:
+  timewellserved-main:
+    build:
+      context: .
+      dockerfile: docker/apache/Dockerfile
+      args:
+        uid: ${UID}
+
+    environment:
+      - APACHE_RUN_USER=#${UID}
+      - APACHE_RUN_GROUP=#${UID}
+      #- CI_ENV
+      - CI_CONFIG
+    restart: unless-stopped
+    volumes:
+      - ./:/var/www/html
+      - ./apache_log:/var/log/apache2
+    ports:
+      - "${CONTAINER_PORT}:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+      - blog.tokslaw.com:10.10.33.15
+volumes:
+  src:
