@@ -1728,7 +1728,7 @@
 
                         <!-- Mail Link -->
                         <p class="footer-mail-link ico-25">
-                            <a href="mailto:yourdomain@mail.com">info@timewellserved.org</a>
+                            <a href="mailto:info@timewellserved.org">info@timewellserved.org</a>
                         </p>
 
                         <!-- Social Links -->
